@@ -2,9 +2,11 @@ import csv
 file = open("chemid-sample.csv")
 filecontent = csv.reader(file)
 for row in filecontent:
-    # print(row[5])
+    print(row[5])
 
-    a_string=row[5]
+    trimmed_SMILE=row[5]
     for character in '([=#)]':
-        a_string = a_string.replace(character, '')
-    print(a_string)
+        trimmed_SMILE =  trimmed_SMILE.replace(character, '')
+    print(trimmed_SMILE)
+    if (trimmed_SMILE.__contains__("C1CCCCC1")):
+        print(row)
